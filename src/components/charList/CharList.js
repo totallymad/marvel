@@ -13,7 +13,7 @@ const CharList = (props) => {
     const [offset, setOffset] = useState(210);
     const [charEnded, setCharEnded] = useState(false);
 
-    const {loading, error, getAllCharacters} = useMarvelService();
+    const { loading, error, getAllCharacters } = useMarvelService();
 
     useEffect(() => {
         onRequest(offset, true);
@@ -26,6 +26,11 @@ const CharList = (props) => {
     }
 
     const onCharListLoaded = (newCharList) => {
+
+        // async
+        // const { logger, secondLog } = await import('./someFunc');
+        // logger();
+
         let ended = false;
         if (newCharList.length < 9) {
             ended = true;
